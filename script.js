@@ -1,10 +1,5 @@
 document.documentElement.classList.remove("no-js");
 
-const currentYearNodes = document.querySelectorAll("[data-current-year]");
-currentYearNodes.forEach((node) => {
-  node.textContent = new Date().getFullYear().toString();
-});
-
 const revealNodes = document.querySelectorAll("[data-reveal]");
 
 if ("IntersectionObserver" in window) {

@@ -678,18 +678,6 @@ body:has(#research:target) .nav-links a[href="#research"] {
   font-size: 1.02rem;
 }
 
-.site-footer {
-  padding: 0.75rem 0 1rem;
-  color: var(--color-muted);
-  font-size: 0.82rem;
-}
-
-.site-footer .page-shell {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
 [data-reveal] {
   opacity: 1;
   transform: none;
@@ -800,10 +788,6 @@ body:has(#research:target) .nav-links a[href="#research"] {
   .timeline-item {
     grid-template-columns: 1fr;
     gap: 0.55rem;
-  }
-
-  .site-footer .page-shell {
-    flex-direction: column;
   }
 
 }
