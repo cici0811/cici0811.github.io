@@ -568,6 +568,22 @@ li + li {
   line-height: 1.35;
 }
 
+.title-proof-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.18rem;
+}
+
+.title-proof-link span {
+  color: rgba(15, 118, 110, 0.72);
+  font-size: 0.72em;
+  line-height: 1;
+}
+
+.title-proof-link:hover {
+  color: var(--color-teal);
+}
+
 .timeline-item p {
   color: var(--color-muted);
 }
