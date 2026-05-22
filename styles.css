@@ -209,6 +209,30 @@ li + li {
   color: #244056;
 }
 
+.email-copy {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: copy;
+}
+
+.email-copy:hover,
+.email-copy:focus-visible {
+  color: var(--color-teal);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.email-copy:focus-visible {
+  outline: 2px solid rgba(15, 118, 110, 0.28);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 .eyebrow {
   margin-bottom: 0.8rem;
   color: var(--color-teal);

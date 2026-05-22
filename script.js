@@ -26,6 +26,43 @@ if ("IntersectionObserver" in window) {
 
 const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
 const observedSections = Array.from(document.querySelectorAll(".section-observed"));
+const emailCopyButtons = Array.from(document.querySelectorAll(".email-copy"));
+
+function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text);
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  document.body.append(textarea);
+  textarea.select();
+
+  const copied = document.execCommand("copy");
+  textarea.remove();
+
+  return copied ? Promise.resolve() : Promise.reject(new Error("Copy failed"));
+}
+
+emailCopyButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const email = button.dataset.email;
+    if (!email) {
+      return;
+    }
+
+    copyText(email)
+      .then(() => {
+        button.setAttribute("aria-label", `已复制邮箱 ${email}`);
+      })
+      .catch(() => {
+        button.setAttribute("aria-label", `复制邮箱 ${email}`);
+      });
+  });
+});
 
 function setActiveNav(id) {
   navLinks.forEach((link) => {
