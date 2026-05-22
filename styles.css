@@ -133,24 +133,14 @@ li + li {
   border-radius: 999px;
 }
 
-.nav-links a:hover,
+.nav-links a:hover {
+  color: var(--color-teal);
+}
+
 .nav-links a[aria-current="true"] {
   color: var(--color-teal);
   background: rgba(15, 118, 110, 0.08);
-}
-
-.nav-links a[aria-current="true"] {
   box-shadow: inset 0 0 0 1px rgba(15, 118, 110, 0.18);
-  font-weight: 800;
-}
-
-body:has(#education:target) .nav-links a[href="#education"],
-body:has(#competitions:target) .nav-links a[href="#competitions"],
-body:has(#practice:target) .nav-links a[href="#practice"],
-body:has(#research:target) .nav-links a[href="#research"] {
-  color: var(--color-teal);
-  background: rgba(15, 118, 110, 0.1);
-  box-shadow: inset 0 0 0 1px rgba(15, 118, 110, 0.2);
   font-weight: 800;
 }
 
@@ -614,22 +604,8 @@ body:has(#research:target) .nav-links a[href="#research"] {
 .practice-head {
   display: flex;
   align-items: center;
-  gap: 0.42rem;
   padding-bottom: 0.44rem;
   border-bottom: 1px solid rgba(15, 32, 51, 0.09);
-}
-
-.practice-head span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.45rem;
-  height: 1.45rem;
-  border-radius: 50%;
-  color: var(--color-teal);
-  background: rgba(15, 118, 110, 0.08);
-  font-size: 0.72rem;
-  font-weight: 800;
 }
 
 .practice-card h3 {
