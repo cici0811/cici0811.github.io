@@ -423,40 +423,20 @@ li + li {
   font-size: 0.78rem;
 }
 
+.stat-label-link {
+  display: inline-flex;
+  width: fit-content;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+}
+
+.stat-label-link:hover {
+  color: var(--color-teal);
+}
+
 .education-stats strong {
   margin-top: 0.18rem;
   font-size: 0.9rem;
-}
-
-.stat-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  margin-top: 0.18rem;
-}
-
-.stat-row strong {
-  margin-top: 0;
-}
-
-.proof-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  min-height: 1.42rem;
-  padding: 0.08rem 0.42rem;
-  border: 1px solid rgba(15, 118, 110, 0.22);
-  border-radius: 999px;
-  color: var(--color-teal);
-  background: rgba(255, 255, 255, 0.72);
-  font-size: 0.72rem;
-  font-weight: 800;
-}
-
-.proof-link:hover {
-  background: rgba(15, 118, 110, 0.08);
 }
 
 .education-panel h4 {
