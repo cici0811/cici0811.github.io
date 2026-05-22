@@ -305,6 +305,11 @@ body:has(#research:target) .nav-links a[href="#research"] {
 
 .section {
   padding: 26px 0;
+  scroll-margin-top: 64px;
+}
+
+.hero {
+  scroll-margin-top: 64px;
 }
 
 .soft-band {
@@ -590,15 +595,87 @@ body:has(#research:target) .nav-links a[href="#research"] {
 
 .practice-stack {
   display: grid;
-  gap: 0.55rem;
+  gap: 0.72rem;
+}
+
+.practice-group {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.practice-card {
+  padding: 0.72rem 0.78rem;
+  border-left: 4px solid rgba(15, 118, 110, 0.46);
+  background:
+    linear-gradient(90deg, rgba(15, 118, 110, 0.055), rgba(255, 255, 255, 0.9) 38%),
+    rgba(255, 255, 255, 0.9);
+}
+
+.practice-head {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  padding-bottom: 0.44rem;
+  border-bottom: 1px solid rgba(15, 32, 51, 0.09);
+}
+
+.practice-head span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 50%;
+  color: var(--color-teal);
+  background: rgba(15, 118, 110, 0.08);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.practice-card h3 {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 1rem;
 }
 
 .practice-timeline .timeline-item h3 {
   margin-bottom: 0;
 }
 
-.practice-card {
-  padding: 0.58rem 0.72rem;
+.practice-timeline {
+  --timeline-time-col: 164px;
+  gap: 0.38rem;
+}
+
+.practice-timeline .timeline-item {
+  padding: 0.4rem 0.55rem;
+  background: rgba(255, 255, 255, 0.64);
+  box-shadow: none;
+}
+
+.practice-timeline h4 {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.practice-summary,
+.practice-card p {
+  color: #3f5268;
+}
+
+.practice-summary {
+  margin: 0;
+  font-weight: 700;
+}
+
+.practice-service p {
+  margin-top: 0.5rem;
+}
+
+.practice-service strong {
+  color: var(--color-teal);
+  font-size: 1.02rem;
 }
 
 .site-footer {

@@ -48,14 +48,46 @@ function setActiveNavFromHash() {
   }
 }
 
+function getHeaderOffset() {
+  const header = document.querySelector(".site-header");
+  return (header ? header.offsetHeight : 0) + 14;
+}
+
+function scrollToSection(id, updateHash = true) {
+  const section = document.getElementById(id);
+  if (!section) {
+    return;
+  }
+
+  const top = section.getBoundingClientRect().top + window.scrollY - getHeaderOffset();
+  window.scrollTo({
+    top: Math.max(top, 0),
+    behavior: "smooth"
+  });
+
+  if (updateHash) {
+    history.pushState(null, "", `#${id}`);
+  }
+
+  setActiveNav(id);
+}
+
 navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
     const id = link.getAttribute("href").replace("#", "");
-    setActiveNav(id);
+    scrollToSection(id);
   });
 });
 
-window.addEventListener("hashchange", setActiveNavFromHash);
+window.addEventListener("hashchange", () => {
+  const id = window.location.hash.replace("#", "");
+  if (id) {
+    scrollToSection(id, false);
+  } else {
+    setActiveNavFromHash();
+  }
+});
 
 if ("IntersectionObserver" in window && observedSections.length > 0) {
   const navObserver = new IntersectionObserver(
@@ -80,3 +112,10 @@ if ("IntersectionObserver" in window && observedSections.length > 0) {
 }
 
 setActiveNavFromHash();
+
+window.addEventListener("load", () => {
+  const id = window.location.hash.replace("#", "");
+  if (id) {
+    requestAnimationFrame(() => scrollToSection(id, false));
+  }
+});
