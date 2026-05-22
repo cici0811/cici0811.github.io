@@ -497,14 +497,18 @@ body:has(#research:target) .nav-links a[href="#research"] {
   position: relative;
   display: grid;
   gap: 0.55rem;
+  --timeline-time-col: 128px;
+  --timeline-gap: 0.62rem;
+  --timeline-pad-x: 0.7rem;
+  --timeline-axis: calc(var(--timeline-pad-x) + var(--timeline-time-col) + (var(--timeline-gap) / 2));
 }
 
 .module-timeline::before {
   content: "";
   position: absolute;
-  top: 0.9rem;
+  top: 0.72rem;
   bottom: 0.9rem;
-  left: 8.65rem;
+  left: var(--timeline-axis);
   width: 1px;
   background: linear-gradient(
     180deg,
@@ -517,31 +521,19 @@ body:has(#research:target) .nav-links a[href="#research"] {
 .timeline-item {
   position: relative;
   display: grid;
-  grid-template-columns: 128px minmax(0, 1fr);
-  gap: 0.62rem;
-  padding: 0.56rem 0.7rem;
+  grid-template-columns: var(--timeline-time-col) minmax(0, 1fr);
+  gap: var(--timeline-gap);
+  padding: 0.56rem var(--timeline-pad-x);
   border: 1px solid var(--color-border);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.82);
   box-shadow: var(--shadow-card);
 }
 
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  top: 1.35rem;
-  left: calc(128px + 0.7rem - 5px);
-  width: 10px;
-  height: 10px;
-  border: 2px solid rgba(15, 118, 110, 0.42);
-  border-radius: 999px;
-  background: #fff;
-}
-
 .timeline-item time {
   color: var(--color-teal);
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 0.72rem;
+  font-size: 0.84rem;
   font-weight: 800;
   line-height: 1.5;
   white-space: nowrap;
@@ -724,8 +716,7 @@ body:has(#research:target) .nav-links a[href="#research"] {
     grid-template-columns: 1fr;
   }
 
-  .module-timeline::before,
-  .timeline-item::before {
+  .module-timeline::before {
     display: none;
   }
 
