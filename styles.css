@@ -425,9 +425,17 @@ li + li {
 
 .stat-label-link {
   display: inline-flex;
+  align-items: center;
+  gap: 0.16rem;
   width: fit-content;
   color: var(--color-muted);
   font-size: 0.78rem;
+}
+
+.stat-label-link span {
+  color: rgba(15, 118, 110, 0.72);
+  font-size: 0.68rem;
+  line-height: 1;
 }
 
 .stat-label-link:hover {
