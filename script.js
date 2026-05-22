@@ -1,5 +1,9 @@
 document.documentElement.classList.remove("no-js");
 
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
 const revealNodes = document.querySelectorAll("[data-reveal]");
 
 if ("IntersectionObserver" in window) {
@@ -112,5 +116,7 @@ window.addEventListener("load", () => {
   const id = window.location.hash.replace("#", "");
   if (id) {
     requestAnimationFrame(() => scrollToSection(id, false));
+  } else {
+    requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: "auto" }));
   }
 });
