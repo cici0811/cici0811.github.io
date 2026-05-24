@@ -469,9 +469,7 @@ li + li {
 .stat-label-link strong {
   color: var(--color-ink);
   margin-top: 0.18rem;
-  text-decoration: underline;
-  text-decoration-color: rgba(15, 118, 110, 0.34);
-  text-underline-offset: 0.16em;
+  text-decoration: none;
 }
 
 .education-stats strong {
