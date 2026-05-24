@@ -452,7 +452,7 @@ li + li {
   align-items: baseline;
   gap: 0.16rem;
   width: fit-content;
-  color: inherit;
+  color: var(--color-ink);
   text-decoration: none;
 }
 
@@ -467,6 +467,7 @@ li + li {
 }
 
 .stat-label-link strong {
+  color: var(--color-ink);
   margin-top: 0.18rem;
   text-decoration: underline;
   text-decoration-color: rgba(15, 118, 110, 0.34);
