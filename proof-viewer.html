@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>证明材料</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #fff;
+      }
+
+      main {
+        min-height: 100vh;
+        padding: 16px;
+        background: #fff;
+      }
+
+      img {
+        display: block;
+        width: min(100%, 1120px);
+        height: auto;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img id="proof-image" alt="证明材料">
+    </main>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const src = params.get("src") || "";
+      const image = document.getElementById("proof-image");
+
+      if (src.startsWith("assets/proofs/")) {
+        image.src = src;
+      }
+    </script>
+  </body>
+</html>

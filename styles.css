@@ -1,16 +1,16 @@
 :root {
-  --color-bg: #f6fafb;
+  --color-bg: #fbfcfd;
   --color-panel: #ffffff;
   --color-ink: #102033;
   --color-muted: #64748b;
-  --color-soft: #eaf4f5;
+  --color-soft: #f1f6f6;
   --color-teal: #0f766e;
-  --color-blue: #2563eb;
+  --color-blue: #1f4f8f;
   --color-sage: #5f7f6f;
   --color-amber: #b7791f;
-  --color-border: rgba(15, 32, 51, 0.11);
-  --shadow-soft: 0 22px 70px rgba(15, 32, 51, 0.09);
-  --shadow-card: 0 12px 34px rgba(15, 32, 51, 0.07);
+  --color-border: rgba(15, 32, 51, 0.14);
+  --shadow-soft: none;
+  --shadow-card: none;
   --max-width: 1160px;
 }
 
@@ -30,13 +30,7 @@ body {
     "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
   font-size: 13px;
   line-height: 1.45;
-  background:
-    linear-gradient(rgba(15, 118, 110, 0.027) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.021) 1px, transparent 1px),
-    radial-gradient(circle at 82% 8%, rgba(15, 118, 110, 0.12), transparent 28rem),
-    radial-gradient(circle at 12% 24%, rgba(183, 121, 31, 0.08), transparent 22rem),
-    var(--color-bg);
-  background-size: 34px 34px, 34px 34px, auto, auto, auto;
+  background: var(--color-bg);
   overflow-x: hidden;
 }
 
@@ -83,8 +77,7 @@ li + li {
   top: 0;
   z-index: 10;
   border-bottom: 1px solid rgba(15, 32, 51, 0.08);
-  background: rgba(246, 250, 251, 0.84);
-  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.96);
 }
 
 .header-inner {
@@ -100,24 +93,27 @@ li + li {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
   min-width: 0;
 }
 
-.brand-mark {
-  display: grid;
-  width: 30px;
-  height: 30px;
-  place-items: center;
-  border: 1px solid rgba(15, 118, 110, 0.28);
-  border-radius: 10px;
-  color: var(--color-teal);
-  font-weight: 800;
-  background: #fff;
+.brand > span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.52rem;
+  min-width: 0;
 }
 
 .brand strong {
-  display: block;
+  display: inline-block;
+  padding-right: 0.52rem;
+  border-right: 1px solid rgba(15, 32, 51, 0.24);
+}
+
+.brand small {
+  color: var(--color-muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -129,23 +125,22 @@ li + li {
 }
 
 .nav-links a {
-  padding: 0.34rem 0.52rem;
-  border-radius: 999px;
+  padding: 0.34rem 0.18rem 0.3rem;
+  border-bottom: 2px solid transparent;
 }
 
 .nav-links a:hover {
-  color: var(--color-teal);
+  color: var(--color-blue);
 }
 
 .nav-links a[aria-current="true"] {
-  color: var(--color-teal);
-  background: rgba(15, 118, 110, 0.08);
-  box-shadow: inset 0 0 0 1px rgba(15, 118, 110, 0.18);
+  color: var(--color-blue);
+  border-bottom-color: var(--color-blue);
   font-weight: 800;
 }
 
 .hero {
-  padding: 26px 0 22px;
+  padding: 16px 0 14px;
 }
 
 .hero-grid {
@@ -170,29 +165,31 @@ li + li {
 
 .hero-copy h1 {
   margin: 0;
-  font-size: clamp(2.15rem, 4.8vw, 3.7rem);
-  line-height: 0.95;
+  font-size: clamp(1.95rem, 4vw, 3.05rem);
+  line-height: 1;
   letter-spacing: 0;
 }
 
 .profile-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem 0.95rem;
-  margin: 0.9rem 0 0;
+  gap: 0.45rem 0.72rem;
+  margin: 0.55rem 0 0;
   padding: 0;
 }
 
 .profile-meta div {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  min-height: 27px;
-  padding: 0.2rem 0.62rem;
-  font-size: 0.84rem;
-  border: 1px solid rgba(15, 118, 110, 0.16);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.76);
+  gap: 0.46rem;
+  min-height: 25px;
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+.profile-meta div + div {
+  padding-left: 0.72rem;
+  border-left: 1px solid rgba(15, 32, 51, 0.14);
 }
 
 .profile-meta dt,
@@ -201,7 +198,7 @@ li + li {
 }
 
 .profile-meta dt {
-  color: var(--color-teal);
+  color: var(--color-blue);
   font-weight: 800;
 }
 
@@ -222,7 +219,7 @@ li + li {
 
 .email-copy:hover,
 .email-copy:focus-visible {
-  color: var(--color-teal);
+  color: var(--color-blue);
   text-decoration: underline;
   text-underline-offset: 0.18em;
 }
@@ -251,10 +248,11 @@ li + li {
 
 .chip-row span,
 .course-grid span {
-  border: 1px solid rgba(15, 118, 110, 0.16);
-  border-radius: 999px;
+  border: 0;
+  border-bottom: 1px solid rgba(15, 32, 51, 0.12);
+  border-radius: 0;
   color: #244056;
-  background: rgba(255, 255, 255, 0.74);
+  background: #fff;
 }
 
 .hero-panel,
@@ -262,8 +260,8 @@ li + li {
 .research-card,
 .practice-card {
   border: 1px solid var(--color-border);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.86);
+  border-radius: 2px;
+  background: #fff;
   box-shadow: var(--shadow-card);
 }
 
@@ -296,10 +294,9 @@ li + li {
   min-width: 0;
   min-height: 98px;
   padding: 0.72rem;
-  border: 1px solid rgba(15, 32, 51, 0.08);
-  border-radius: 8px;
-  background:
-    linear-gradient(180deg, rgba(234, 244, 245, 0.64), rgba(255, 255, 255, 0.86));
+  border: 1px solid rgba(15, 32, 51, 0.1);
+  border-radius: 2px;
+  background: #fff;
 }
 
 .metric-card span,
@@ -327,13 +324,14 @@ li + li {
 }
 
 .soft-band {
-  background: rgba(255, 255, 255, 0.42);
+  background: transparent;
   border-block: 1px solid rgba(15, 32, 51, 0.07);
 }
 
 .section-heading {
-  max-width: 720px;
-  margin-bottom: 0.95rem;
+  max-width: none;
+  margin-bottom: 0.58rem;
+  border-bottom: 2px solid rgba(31, 79, 143, 0.55);
 }
 
 .section-heading.wide {
@@ -341,9 +339,10 @@ li + li {
 }
 
 .section-heading h2 {
-  margin: 0 0 0.25rem;
-  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
-  line-height: 1.12;
+  margin: 0 0 0.32rem;
+  font-size: clamp(1.08rem, 1.6vw, 1.35rem);
+  line-height: 1.18;
+  color: var(--color-blue);
   letter-spacing: 0;
 }
 
@@ -378,14 +377,13 @@ li + li {
 
 .split-layout {
   display: grid;
-  grid-template-columns: minmax(120px, 190px) minmax(0, 1fr);
-  gap: 0.75rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.64rem;
   align-items: start;
 }
 
 .sticky-heading {
-  position: sticky;
-  top: 84px;
+  position: static;
 }
 
 .education-panel {
@@ -417,10 +415,10 @@ li + li {
 
 .timeline-head > span {
   align-self: start;
-  border-radius: 999px;
+  border-radius: 2px;
   padding: 0.25rem 0.56rem;
-  color: var(--color-teal);
-  background: rgba(15, 118, 110, 0.08);
+  color: var(--color-blue);
+  background: rgba(31, 79, 143, 0.08);
   font-weight: 800;
 }
 
@@ -433,8 +431,9 @@ li + li {
 
 .education-stats div {
   padding: 0.45rem;
-  border-radius: 8px;
-  background: var(--color-soft);
+  border-radius: 2px;
+  border: 1px solid rgba(15, 32, 51, 0.07);
+  background: #f5f7f9;
 }
 
 .education-stats span,
@@ -463,7 +462,12 @@ li + li {
 }
 
 .stat-label-link:hover {
-  color: var(--color-teal);
+  color: var(--color-blue);
+}
+
+.stat-label-link:hover strong,
+.stat-label-link:hover span {
+  color: var(--color-blue);
 }
 
 .stat-label-link strong {
@@ -492,12 +496,12 @@ li + li {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 0.75rem;
-  padding: 0.34rem 0.52rem;
+  padding: 0.3rem 0;
   min-width: 0;
 }
 
 .course-grid strong {
-  color: var(--color-teal);
+  color: var(--color-blue);
 }
 
 .research-card {
@@ -505,9 +509,7 @@ li + li {
 }
 
 .research-card.featured {
-  background:
-    linear-gradient(135deg, rgba(15, 118, 110, 0.1), rgba(37, 99, 235, 0.07)),
-    rgba(255, 255, 255, 0.95);
+  background: #fff;
 }
 
 .card-meta {
@@ -521,7 +523,7 @@ li + li {
 
 .role {
   margin-bottom: 0.8rem;
-  color: var(--color-teal);
+  color: var(--color-blue);
   font-weight: 800;
 }
 
@@ -548,18 +550,7 @@ li + li {
 }
 
 .module-timeline::before {
-  content: "";
-  position: absolute;
-  top: 0.72rem;
-  bottom: 0.9rem;
-  left: var(--timeline-axis);
-  width: 1px;
-  background: linear-gradient(
-    180deg,
-    rgba(15, 118, 110, 0.1),
-    rgba(15, 118, 110, 0.42),
-    rgba(37, 99, 235, 0.14)
-  );
+  display: none;
 }
 
 .timeline-item {
@@ -569,13 +560,13 @@ li + li {
   gap: var(--timeline-gap);
   padding: 0.56rem var(--timeline-pad-x);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.82);
+  border-radius: 2px;
+  background: #fff;
   box-shadow: var(--shadow-card);
 }
 
 .timeline-item time {
-  color: var(--color-teal);
+  color: var(--color-blue);
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
   font-size: 0.84rem;
   font-weight: 800;
@@ -605,13 +596,17 @@ li + li {
 }
 
 .title-proof-link span {
-  color: rgba(15, 118, 110, 0.72);
+  color: rgba(31, 79, 143, 0.72);
   font-size: 0.72em;
   line-height: 1;
 }
 
 .title-proof-link:hover {
-  color: var(--color-teal);
+  color: var(--color-blue);
+}
+
+.title-proof-link:hover span {
+  color: var(--color-blue);
 }
 
 .timeline-item p {
@@ -623,9 +618,7 @@ li + li {
 }
 
 .research-timeline .timeline-item.featured {
-  background:
-    linear-gradient(135deg, rgba(15, 118, 110, 0.1), rgba(37, 99, 235, 0.07)),
-    rgba(255, 255, 255, 0.95);
+  background: #fff;
 }
 
 .award-item {
@@ -634,12 +627,12 @@ li + li {
   gap: 1rem;
   padding: 1rem;
   border: 1px solid var(--color-border);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.78);
+  border-radius: 2px;
+  background: #fff;
 }
 
 .award-item time {
-  color: var(--color-teal);
+  color: var(--color-blue);
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
   font-weight: 800;
 }
@@ -660,10 +653,8 @@ li + li {
 
 .practice-card {
   padding: 0.72rem 0.78rem;
-  border-left: 4px solid rgba(15, 118, 110, 0.46);
-  background:
-    linear-gradient(90deg, rgba(15, 118, 110, 0.055), rgba(255, 255, 255, 0.9) 38%),
-    rgba(255, 255, 255, 0.9);
+  border-left: 3px solid rgba(31, 79, 143, 0.45);
+  background: #fff;
 }
 
 .practice-head {
@@ -690,7 +681,7 @@ li + li {
 
 .practice-timeline .timeline-item {
   padding: 0.4rem 0.55rem;
-  background: rgba(255, 255, 255, 0.64);
+  background: #fff;
   box-shadow: none;
 }
 
@@ -715,7 +706,7 @@ li + li {
 }
 
 .practice-service strong {
-  color: var(--color-teal);
+  color: var(--color-blue);
   font-size: 1.02rem;
 }
 
@@ -749,7 +740,7 @@ li + li {
   }
 
   .hero {
-    padding-top: 28px;
+    padding-top: 18px;
   }
 
   .hero-grid,
@@ -772,7 +763,7 @@ li + li {
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.2rem, 13vw, 2.8rem);
+    font-size: clamp(1.95rem, 11vw, 2.45rem);
   }
 
   .nav-links {

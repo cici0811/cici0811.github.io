@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js" lang="zh-CN">
   <head>
     <meta charset="utf-8">
@@ -17,9 +17,9 @@
     <header class="site-header" aria-label="网站导航">
       <div class="header-inner">
         <a class="brand" href="#profile" aria-label="黄欣怡主页">
-          <span class="brand-mark" aria-hidden="true">HX</span>
           <span>
             <strong>黄欣怡</strong>
+            <small>个人主页</small>
           </span>
         </a>
         <nav class="nav-links" aria-label="页面章节">
@@ -81,13 +81,19 @@
             <div class="education-stats">
               <div>
                 <span>学分绩点</span>
-                <strong>3.95/5.0</strong>
+                <a
+                  class="stat-label-link"
+                  href="proof-viewer.html?src=assets/proofs/transcript-2026.png"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="查看成绩单"
+                ><strong>3.95/5.0</strong><span aria-hidden="true">↗</span></a>
               </div>
               <div class="ranking-stat">
                 <span>专业排名</span>
                 <a
                   class="stat-label-link"
-                  href="assets/proofs/ranking-proof.jpg"
+                  href="proof-viewer.html?src=assets/proofs/ranking-proof.jpg"
                   target="_blank"
                   rel="noopener"
                   aria-label="查看专业排名证明"
@@ -98,7 +104,7 @@
                 <strong>
                   <a
                     class="title-proof-link"
-                    href="assets/proofs/first-class-scholarship-2024.jpg"
+                    href="proof-viewer.html?src=assets/proofs/first-class-scholarship-2024.jpg"
                     target="_blank"
                     rel="noopener"
                     aria-label="查看校一等奖学金证书"
@@ -107,18 +113,16 @@
               </div>
               <div>
                 <span>英语水平</span>
-                <strong>CET-6</strong>
+                <a
+                  class="stat-label-link"
+                  href="english-proofs.html"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="查看英语能力证明"
+                ><strong>CET-6</strong><span aria-hidden="true">↗</span></a>
               </div>
             </div>
-            <h4>
-              <a
-                class="title-proof-link"
-                href="assets/proofs/transcript-2026.png"
-                target="_blank"
-                rel="noopener"
-                aria-label="查看成绩单"
-              >核心课程<span aria-hidden="true">↗</span></a>
-            </h4>
+            <h4>核心课程</h4>
             <div class="course-grid">
               <span>网络空间安全数学基础 <strong>95.6</strong></span>
               <span>网络安全原理 <strong>97.1</strong></span>
@@ -143,7 +147,7 @@
                 <h3>
                   <a
                     class="title-proof-link"
-                    href="assets/proofs/math-modeling-award-2025.jpg"
+                    href="proof-viewer.html?src=assets/proofs/math-modeling-award-2025.jpg"
                     target="_blank"
                     rel="noopener"
                     aria-label="查看高教社杯全国大学生数学建模竞赛获奖证书"
@@ -165,7 +169,7 @@
                 <h3>
                   <a
                     class="title-proof-link"
-                    href="assets/proofs/data-security-award-2026.jpg"
+                    href="proof-viewer.html?src=assets/proofs/data-security-award-2026.jpg"
                     target="_blank"
                     rel="noopener"
                     aria-label="查看第三届数信杯数据安全大赛优秀案例征集赛获奖证书"
@@ -180,7 +184,7 @@
                 <h3>
                   <a
                     class="title-proof-link"
-                    href="assets/proofs/lanqiao-award-2026-redacted.jpg"
+                    href="proof-viewer.html?src=assets/proofs/lanqiao-award-2026-redacted.jpg"
                     target="_blank"
                     rel="noopener"
                     aria-label="查看第十七届蓝桥杯全国大学生软件和信息技术大赛软件赛 C/C++程序设计大学A组获奖证书"
@@ -205,7 +209,7 @@
                 <p class="role">
                   <a
                     class="title-proof-link"
-                    href="assets/proofs/software-first-author-2026.jpg"
+                    href="proof-viewer.html?src=assets/proofs/software-first-author-2026.jpg"
                     target="_blank"
                     rel="noopener"
                     aria-label="查看软件著作权第一作者证明"
@@ -220,7 +224,7 @@
                 <p class="result">
                   <a
                     class="title-proof-link"
-                    href="assets/proofs/software-copyright-2026.jpg"
+                    href="proof-viewer.html?src=assets/proofs/software-copyright-2026.jpg"
                     target="_blank"
                     rel="noopener"
                     aria-label="查看基于隐私计算的联邦协作平台软件著作权登记证书"
@@ -242,16 +246,16 @@
               </div>
             </article>
             <article class="timeline-item research-card">
-              <time>2025.09 - 2025.12</time>
+              <time>2026.03 - 至今</time>
               <div>
-                <p class="role">负责人</p>
-                <h3>国产服务器操作系统集群化部署与高可用运维</h3>
+                <p class="role">区块链审计负责人</p>
+                <h3>基于语义区块链的智慧农业数字资产管理平台</h3>
                 <ul>
-                  <li>主导 PXE 批量装机与集群环境初始化</li>
-                  <li>完成服务源码编译、Docker 镜像构建与 Kubernetes 高可用集群搭建</li>
-                  <li>配置 HAProxy + Keepalived，实现负载均衡与故障自动切换</li>
+                  <li>参与平台安全架构设计，基于 Hyperledger Fabric 联盟链实现农业数据资产与 AI 模型资产的可信存证及审计溯源</li>
+                  <li>设计链上链下协同存储方案，通过链上哈希摘要完成资产完整性校验与防篡改验证</li>
+                  <li>参与模型版本链设计，记录版本关系、性能指标与模型包哈希，实现模型迭代过程的可信追溯</li>
                 </ul>
-                <p class="result">福建省大学生计算科学与智能创新大赛省级二等奖</p>
+                <p class="result">第 19 届中国大学生计算机设计大赛｜已晋级国赛</p>
               </div>
             </article>
           </div>
@@ -270,13 +274,13 @@
               </div>
               <p class="practice-summary">获<a
                 class="title-proof-link"
-                href="assets/proofs/excellent-student-club-cadre-2025.jpg"
+                href="proof-viewer.html?src=assets/proofs/excellent-student-club-cadre-2025.jpg"
                 target="_blank"
                 rel="noopener"
                 aria-label="查看校优秀学生社团干部证书"
               >校优秀学生社团干部<span aria-hidden="true">↗</span></a>、“<a
                 class="title-proof-link"
-                href="assets/proofs/peer-psychological-counselor-2025.jpg"
+                href="proof-viewer.html?src=assets/proofs/peer-psychological-counselor-2025.jpg"
                 target="_blank"
                 rel="noopener"
                 aria-label="查看优秀学生朋辈心理辅导员证书"
@@ -288,7 +292,7 @@
                     <h4>
                       <a
                         class="title-proof-link"
-                        href="assets/proofs/study-committee-proof-2023-2025.jpg"
+                        href="proof-viewer.html?src=assets/proofs/study-committee-proof-2023-2025.jpg"
                         target="_blank"
                         rel="noopener"
                         aria-label="查看学习委员证明"
@@ -302,7 +306,7 @@
                     <h4>
                       <a
                         class="title-proof-link"
-                        href="assets/proofs/mental-health-minister-2024.jpg"
+                        href="proof-viewer.html?src=assets/proofs/mental-health-minister-2024.jpg"
                         target="_blank"
                         rel="noopener"
                         aria-label="查看学院心理健康教育中心部长聘书"
@@ -316,7 +320,7 @@
                     <h4>
                       <a
                         class="title-proof-link"
-                        href="assets/proofs/student-union-vice-chair-2025.jpg"
+                        href="proof-viewer.html?src=assets/proofs/student-union-vice-chair-2025.jpg"
                         target="_blank"
                         rel="noopener"
                         aria-label="查看学院团委学生会副主席证明"
