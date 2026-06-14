@@ -19,7 +19,8 @@
 
       body {
         margin: 0;
-        background: var(--bg);
+        min-height: 100svh;
+        background: #fff;
         color: var(--ink);
         font-family:
           Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
@@ -29,23 +30,27 @@
       }
 
       main {
-        width: min(calc(100% - 40px), 980px);
+        width: min(calc(100% - 24px), 1160px);
         margin: 0 auto;
-        padding: 18px 0 28px;
+        padding: 12px 0;
       }
 
       .proof-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-        align-items: start;
+        min-height: calc(100svh - 24px);
+        gap: 12px;
+        align-items: center;
       }
 
       figure {
         margin: 0;
-        padding: 14px;
+        padding: 0;
         border: 1px solid var(--border);
         background: #fff;
+        display: grid;
+        min-width: 0;
+        place-items: center;
       }
 
       figcaption {
@@ -62,8 +67,11 @@
 
       img {
         display: block;
-        width: 100%;
+        width: auto;
+        max-width: 100%;
+        max-height: calc(100svh - 28px);
         height: auto;
+        object-fit: contain;
       }
 
       @media (max-width: 620px) {
@@ -78,6 +86,7 @@
 
         .proof-grid {
           grid-template-columns: 1fr;
+          min-height: auto;
         }
       }
     </style>
