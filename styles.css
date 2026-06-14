@@ -315,8 +315,12 @@ li + li {
 }
 
 .section {
-  padding: 26px 0;
+  padding: 20px 0;
   scroll-margin-top: 64px;
+}
+
+.section + .section {
+  padding-top: 12px;
 }
 
 .hero {
